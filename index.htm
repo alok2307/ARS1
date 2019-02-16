@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="slicebox.css" />
+    <script src="js/jquery-3.3.min.1.js"></script>
+    <script src="jquery.slicebox.min.js"></script>
+    <!-- <script>
+      $("document").ready(function() {
+        $("body").append("");
+      });
+    </script> -->
+    <!-- <script>
+      $("document").ready(function() {
+        var newText = $("<p>");
+        newText.append("<h1>I just replace something</h1>");
+        $("#textbox").html(newText);
+      });
+    </script> -->
+    <!-- <script>
+      $("document").ready(function() {
+        $("#textbox").on("click", whenMouseClicked);
+        $("#textbox").on("mouseleave", whenMouseLeaves);
+
+        function whenMouseClicked() {
+          $("#textbox").html("<h1 class='text-danger'>You Clicked Me</h1>");
+        }
+
+        function whenMouseLeaves() {
+          $("#textbox").html("<h1 class='text-danger'>Your ya gone</h1>");
+        }
+      });
+    </script> -->
+
+    <!-- /* hidden-show script*/ -->
+
+    <script>
+      $("document").ready(function() {
+        $("#show").on("click", function() {
+          $("#textbox").show();
+        });
+        $("#hide").on("click", function() {
+          $("#textbox").hide();
+        });
+      });
+    </script>
+
+    <!-- hover effect script -->
+
+    <script>
+      $("document").ready(function() {
+        $(".textcopy").hover(highlightcopy);
+        function highlightcopy() {
+          $(this).toggleClass("highlight");
+        }
+      });
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(90deg, lightgreen, #1665c1);
+        background-size: 400% 400%;
+        background-size: cover;
+        animation: backgroundGradient 35s ease infinite;
+        position: relative;
+        height: 100%;
+        z-index: 1;
+      }
+      @keyframes backgroundGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      #textbox {
+        /* width: 150px;
+        height: 150px;
+        border: 1px solid black; 
+        background-color: aliceblue; */
+        display: none;
+      }
+      .highlight {
+        text-shadow: 1px 1px #cccccc;
+        background: #7797d3;
+        color: antiquewhite;
+        font-family: italic;
+        font-size: 20px;
+        border-radius: 15px;
+        padding: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      #click {
+        font-family: downcome;
+        font-size: 30px;
+      }
+      #animated {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: monospace;
+      }
+      #animated h1 {
+        animation: typing-text 6s steps(33), blink 0.5s infinite;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid black;
+      }
+      @keyframes typing-text {
+        from {
+          width: 0;
+        }
+        to {
+          width: 33ch;
+        }
+      }
+      @keyframes blink {
+        from {
+          border-color: transparent;
+        }
+        to {
+          border-color: black;
+        }
+      }
+      .bubble {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        transform: translateZ(0);
+      }
+      .bubble li {
+        position: absolute;
+        list-style: none;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.15);
+        bottom: -100px;
+        animation: square 20s infinite;
+        transition-timing-function: linear;
+        border-radius: 50%;
+      }
+      .bubble li:nth-child(1) {
+        width: 40px;
+        height: 40px;
+        left: 20%;
+      }
+      .bubble li:nth-child(2) {
+        width: 60px;
+        height: 60px;
+        left: 40%;
+        animation-delay: 2s;
+        animation-duration: 20s;
+      }
+      .bubble li:nth-child(3) {
+        width: 10px;
+        height: 10px;
+        left: 55%;
+        animation-delay: 4s;
+        animation-duration: 13s;
+      }
+      .bubble li:nth-child(4) {
+        width: 80px;
+        height: 80px;
+        left: 65%;
+        animation-delay: 1s;
+        animation-duration: 22s;
+      }
+      .bubble li:nth-child(5) {
+        width: 50px;
+        height: 50px;
+        left: 50%;
+        animation-delay: 7s;
+        animation-duration: 12s;
+      }
+      @keyframes square {
+        0% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        100% {
+          -webkit-transform: translateY(-1080px) rotate(630deg);
+          transform: translateY(-1080px) rotate(630deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>I LOVE All of you</h1> -->
+    <div class=" mt-6 pt-3 text-center m-auto text-info " id="animated">
+      <h1>Welcome All of you in ARSWORLD.</h1>
+    </div>
+
+    <p
+      id="click"
+      class="text-center text-bold mt-5 text-primary font-weight-bold text-uppercase"
+    >
+      <a href="#" id="show" class="text-danger font-weight-bold"
+        >Click to Show</a
+      >
+      |
+      <a href="#" id="hide" class="text-success font-weight-bold"
+        >Click to Hide</a
+      >
+    </p>
+
+    <div id="textbox" class="w-50 m-auto pt-5 text-white">
+      <p class="textcopy">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quaerat
+        quisquam harum est dolorum eaque, natus quis tempora id perferendis ab
+        doloribus, nulla molestias recusandae nesciunt voluptate,
+      </p>
+      <p class="textcopy">
+        quod explicabo quasi voluptatum soluta saepe veniam mollitia asperiores.
+        Dolore inventore neque ea aperiam. Doloremque adipisci unde qui natus
+        neque nostrum quia veritatis.
+      </p>
+    </div>
+
+    <div class="slider w-50">
+      <ul class="sb-slider" id="sb-slider">
+        <li>
+          <a href=""
+            ><img
+              src="https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?cs=srgb&dl=artistic-blossom-bright-207962.jpg&fm=jpg"
+              width="500px"
+              ;
+              height="500px"
+              ;
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img
+              src="https://png.pngtree.com/back_origin_pic/04/46/84/2edba59a13c78f24bef2769ad30c9e42.jpg"
+              alt=""
+              width="500px"
+              ;
+              height="500px"
+              ;
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img
+              src="https://wpmisc.com/sites/default/files/wallpaper/love/70188/love-fire-hd-wallpapers-70188-102277.png"
+              alt=""
+              width="500px"
+              ;
+              height="500px"
+              ;
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img
+              src="https://i.pinimg.com/originals/af/13/4c/af134c8fc95eef7f58bd74c9021bd20f.jpg"
+              alt=""
+              width="500px"
+              ;
+              height="500px"
+              ;
+          /></a>
+        </li>
+      </ul>
+      <div class="shadow" id="shadow"></div>
+      <div class="nav-arrows" id="nav-arrows">
+        <a href="">Next</a>
+        <a href="">Previous</a>
+      </div>
+    </div>
+
+    <script>
+      $(function(){
+        var page = (function(){
+          var $navArrows = ('#nav-arrows').hide(),
+          $shadow = $('#shadow'),hide(),
+          slicebox = ('#sb-slider').slicebox({
+            onReady = function(){
+              $navArrows.show();
+              $shadow.show();
+            },
+            orienttion : 'r',
+            cuboidsRandom : true,
+            disperseFactor : 30
+          }),
+          init function(){
+            initEvents();
+          },
+          initEvents = function(){
+            $navArrows.children(':first').on('click',function(){
+              slicebox.next();
+              return false;
+            });
+            $navArrows.children(':last').on('click',function(){
+              slicebox.previous();
+              return false;
+            });
+          };
+          return{ init : init };
+        })();
+        page.init();
+        });
+    </script>
+
+    <div>
+      <ul class="bubble">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>
